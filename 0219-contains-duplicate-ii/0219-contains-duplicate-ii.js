@@ -4,14 +4,14 @@
  * @return {boolean}
  */
 var containsNearbyDuplicate = function(nums, k) {
-    let numMap = {}; // HashMap to store last index of each number
+    let numMap = {}; 
 
     for (let i = 0; i < nums.length; i++) {
         if (numMap.hasOwnProperty(nums[i]) && Math.abs(i - numMap[nums[i]]) <= k) {
-            return true; // Found duplicate within k distance
+            return true;
         }
-        numMap[nums[i]] = i; // Update last seen index
+        numMap[nums[i]] = i; 
     }
 
-    return false; // No duplicate found within k distance
+    return false; 
 };
