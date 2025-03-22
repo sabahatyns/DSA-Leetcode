@@ -13,11 +13,11 @@ var findShortestSubArray = function(nums) {
         if (!(num in numInfo)) {
             numInfo[num] = { count: 0, first: i, last: i };
         } else {
-            numInfo[num].last = i;  // Update last occurrence
+            numInfo[num].last = i;  //
         }
         
-        numInfo[num].count++;  // Increase frequency
-        maxDegree = Math.max(maxDegree, numInfo[num].count);  // Update max degree
+        numInfo[num].count++;  
+        maxDegree = Math.max(maxDegree, numInfo[num].count); 
     }
 
     // Step 2: Find the shortest subarray with max degree
