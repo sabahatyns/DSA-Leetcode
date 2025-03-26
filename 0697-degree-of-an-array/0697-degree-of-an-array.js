@@ -3,8 +3,8 @@
  * @return {number}
  */
 var findShortestSubArray = function(nums) {
-    let numInfo = {};  // Hash table to store frequency, first, and last occurrence
-    let maxDegree = 0;  // Maximum frequency in the array
+    let numInfo = {};
+    let maxDegree = 0;  
 
     // Step 1: Populate the hash table
     for (let i = 0; i < nums.length; i++) {
