@@ -1,21 +1,16 @@
-/**
- * @param {number[]} nums
- * @return {void} Do not return anything, modify nums in-place instead.
- */
 function moveZeroes(nums) {
-  let insertPos = 0;
+  let nonZero = 0;
 
   // Move all non-zero elements to the front
-  for (let num of nums) {
-    if (num !== 0) {
-      nums[insertPos++] = num;
+  for (let i = 0; i < nums.length; i++) {
+    if (nums[i] !== 0) {
+      nums[nonZero] = nums[i];
+      nonZero++;
     }
   }
 
-  // Fill the rest with zeros
-  while (insertPos < nums.length) {
-    nums[insertPos++] = 0;
+  // Fill the rest of the array with zeros
+  for (let i = nonZero; i < nums.length; i++) {
+    nums[i] = 0;
   }
-
-  return nums; // Optional: useful if you want to return the modified array
 }
