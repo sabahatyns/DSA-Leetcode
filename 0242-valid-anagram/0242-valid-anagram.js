@@ -1,27 +1,25 @@
-/**
- * @param {string} s
- * @param {string} t
- * @return {boolean}
- */
-var isAnagram = function (s, t) {
-    if (s.length !== t.length) return false;
-    let NewStr = {};
+function isAnagram(s, t) {
+    if (s.length !== t.length) return false
+    let ana = {}
     for (let i = 0; i < s.length; i++) {
-        let char = s[i];
-        if (NewStr[char] === undefined) {
-            NewStr[char] = 1;
+        if (ana[s[i]]) {
+            ana[s[i]]++
         } else {
-            NewStr[char]++
+            ana[s[i]] = 1;
         }
     }
 
-    for (let i = 0; i < t.length; i++) {
-        let char = t[i];
-        if (NewStr[char] === undefined || NewStr[char] === 0) {
+    for (let j = 0; j < t.length; j++) {
+        if (!ana[t[j]]) {
             return false;
         } else {
-            NewStr[char]--
+            ana[t[j]]--
         }
-    };
+    }
+    for (let i in ana) {
+        if (ana[i] !== 0) {
+            return false
+        }
+    }
     return true
 }
